@@ -7,6 +7,6 @@
         "outFile": "docs/js/main.js"
     },
     "include": [
-        "dev/**/*"
+        "src/**/*"
     ]
 }
