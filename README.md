@@ -1,4 +1,4 @@
-# CMTPRG01-8 - Toets Breakout - Opdracht B
+# Strategy Pattern - Breakout
 
 ![Game image](docs/images/game-image.png)
 
