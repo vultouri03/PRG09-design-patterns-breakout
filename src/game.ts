@@ -1,4 +1,7 @@
-
+/**
+ * The game class is the main class of the game. It creates all the objects and
+ * starts the game loop.
+ */
 class Game {
     // Fields
     private paddle : Paddle
@@ -15,5 +18,5 @@ class Game {
         requestAnimationFrame(() => this.gameLoop())
     }
 }
-
+// This is the entry point of the game. It is called when the page is loaded.
 window.addEventListener("load", () => new Game())
