@@ -1,3 +1,5 @@
+import { Paddle } from "./classes/paddle";
+
 /**
  * The game class is the main class of the game. It creates all the objects and
  * starts the game loop.

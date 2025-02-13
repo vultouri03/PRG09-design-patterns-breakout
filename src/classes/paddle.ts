@@ -2,7 +2,7 @@
  * Paddle class
  * automatically added to the game tag in index.html
  */
-class Paddle extends HTMLElement {
+export class Paddle extends HTMLElement {
     // Fields
     private x           : number    = 0
     private y           : number    = 0

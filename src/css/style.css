@@ -13,7 +13,7 @@ body {
     font-size:22px;
     overflow:hidden;
     margin:0px; padding:0px;
-    background-image: url(../images/court.png);
+    background-image: url(/images/court.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -38,31 +38,31 @@ splash {
 
 ball-component {
     width:22px; height:22px;
-    background-image: url(../images/ballBlue.png);
+    background-image: url(/images/ballBlue.png);
 }
 
 paddle-component {
     width:104px; height:24px;
-    background-image: url(../images/paddleRed.png);
+    background-image: url(/images/paddleRed.png);
 }
 
 brick-component {
     width:64px; height:32px;
-    background-image: url(../images/brick-purple.png);
+    background-image: url(/images/brick-purple.png);
 }
 
 yellow-brick {
     width:64px; height:32px;
-    background-image: url(../images/brick-yellow.png);
+    background-image: url(/images/brick-yellow.png);
 }
 
 hold-upgrade {
     width:48px; height:46px;
-    background-image: url(../images/upgrades/polygon_red.png);
+    background-image: url(/images/upgrades/polygon_red.png);
 }
 faster-upgrade {
     width:48px; height:46px;
-    background-image: url(../images/upgrades/polygon_blue.png);
+    background-image: url(/images/upgrades/polygon_blue.png);
 }
 
 score {

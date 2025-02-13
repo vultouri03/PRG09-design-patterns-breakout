@@ -1,16 +1,19 @@
 # Strategy Pattern - Breakout
 
-![Game image](docs/images/game-image.png)
+![Game image](public/images/game-image.png)
 
 ## Installatie
 
-1. Installeer TypeScript
-```
-npm install -g typescript
-```
-Mocht het commando tsc niet herkent worden. Sluit Visual Studio Code en start het opnieuw op.
+**Locale development**
 
-Met CRTL + SHIFT + B kan je de watch starten en de code compileren.
+1. Clone deze repository
+2. Start development server met `npm run dev`
+3. Op de url uit de terminal om de game te testen
+
+**Online publicatie**
+
+1. Voer uit: `npm run build`
+2. Upload de `docs` folder naar een webserver of gebruik GitHub Pages.
 
 ## Spelregels
 

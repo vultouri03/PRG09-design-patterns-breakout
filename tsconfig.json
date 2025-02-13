@@ -1,12 +1,33 @@
 {
-    "compilerOptions": {
-        "strict": true,
-        "target": "es6",
-        "removeComments": true,
-        "sourceMap": true,
-        "outFile": "docs/js/main.js"
-    },
-    "include": [
-        "src/**/*"
-    ]
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "sourceMap":  false,
+    "removeComments": true,
+
+    "outDir": "./docs/js/",
+    "rootDir": "./src"
+  },
+  "include": [
+    "src"
+  ]
 }
