@@ -54,7 +54,8 @@ paddle-component {
 /* for assesment remember that the alternative to changing these is using direct inheritence for blocks.
 this makes the yellow to purple behaviour less nice, since you would need to remove the old block 
 and then add a new purple block */
-*/ #brick-component {
+
+#brick-component {
   width: 64px;
   height: 32px;
   background-image: url(/images/brick-purple.png);

@@ -6,7 +6,7 @@ export class Yellow implements BlockBehaviour {
   public sprite = "yellow-brick";
   public nextBehaviour = new Purple();
 
-  onCollison(block: Block): void {
+  onCollision(block: Block): void {
     block.changeBehaviour(this.nextBehaviour);
   }
 }

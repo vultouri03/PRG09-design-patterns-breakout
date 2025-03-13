@@ -4,7 +4,7 @@ import { BlockBehaviour } from "./BlockBehaviour";
 export class Red implements BlockBehaviour {
   public sprite = "red-brick";
 
-  onCollison(block: Block): void {
+  onCollision(block: Block): void {
     block.remove();
   }
 }

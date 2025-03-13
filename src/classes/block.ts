@@ -3,7 +3,7 @@ import { GameObject } from "./gameObject";
 
 export class Block extends GameObject {
   //fields
-  private behaviour: BlockBehaviour;
+  public behaviour: BlockBehaviour;
 
   constructor(x: number, y: number, behaviour: BlockBehaviour) {
     super();
@@ -20,6 +20,11 @@ export class Block extends GameObject {
   public changeBehaviour(behaviour: BlockBehaviour): void {
     this.behaviour = behaviour;
     this.id = this.behaviour.sprite;
+  }
+
+  public onCollision(gameObject: GameObject): void {
+    super.onCollision(gameObject);
+    this.behaviour.onCollision(this);
   }
 }
 

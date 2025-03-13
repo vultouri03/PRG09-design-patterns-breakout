@@ -1,9 +1,8 @@
 import { GameObject } from "./gameObject";
-import { Paddle } from "./paddle";
 
 export class Ball extends GameObject {
   private _x_speed: number = 3;
-  private _y_speed: number = 3;
+  private _y_speed: number = 7;
 
   constructor(x: number, y: number) {
     super();
@@ -17,10 +16,18 @@ export class Ball extends GameObject {
   public update(): void {
     this.x += this._x_speed;
     this.y -= this._y_speed;
+    //check if it is in the screen
+    if (this.x > window.innerWidth - this.clientWidth || this.x < 0) {
+      this._x_speed *= -1;
+    }
+    if (this.y < 0 || this.y > window.innerHeight - this.clientHeight) {
+      this._y_speed *= -1;
+    }
     super.update();
   }
 
-  private onCollision(): void {
+  public onCollision(gameObject: GameObject): void {
+    super.onCollision(gameObject);
     this._y_speed *= -1;
     this._x_speed = Math.random() > 0.5 ? 3 : -3;
   }

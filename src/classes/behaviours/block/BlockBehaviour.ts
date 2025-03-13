@@ -4,5 +4,5 @@ export interface BlockBehaviour {
   sprite: string;
   nextBehaviour?: BlockBehaviour;
 
-  onCollison(block: Block): void;
+  onCollision(block: Block): void;
 }
