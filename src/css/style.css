@@ -72,22 +72,22 @@ and then add a new purple block */
   background-image: url(/images/brick-red.png);
 }
 
-hold-upgrade {
+#hold-upgrade {
   width: 48px;
   height: 46px;
   background-image: url(/images/upgrades/polygon_red.png);
 }
 
-faster-upgrade {
+#faster-upgrade {
   width: 48px;
   height: 46px;
   background-image: url(/images/upgrades/polygon_blue.png);
 }
 
-duplicate-upgrade {
+#inverse-upgrade {
   width: 48px;
   height: 46px;
-  background-image: url(/images/upgrades/polygon_green.png);
+  background-image: url(/images/upgrades/polygon_yellow.png);
 }
 
 score {

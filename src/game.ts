@@ -3,7 +3,7 @@ import { Block } from "./classes/block";
 import { Red } from "./classes/behaviours/block/red";
 import { Yellow } from "./classes/behaviours/block/yellow";
 import { Ball } from "./classes/ball";
-import { GameObject } from "./classes/gameObject";
+import { Upgrade } from "./classes/upgrade";
 
 /**
  * The game class is the main class of the game. It creates all the objects and
@@ -15,6 +15,7 @@ class Game {
   private paddle: Paddle;
   private ball: Ball;
   private blocks: Block[] = [];
+  private upgrades: Upgrade[] = [];
 
   constructor() {
     this.paddle = new Paddle();
@@ -28,6 +29,15 @@ class Game {
     this.ball.update();
     this.blocks.forEach((block) => block.update());
     this.checkCollision();
+    let _upgrades = document.getElementsByTagName("upgrade-element");
+    if (_upgrades.length > 0) {
+      this.upgrades = Array.from(_upgrades).map(
+        (element) => element as unknown as Upgrade
+      );
+    }
+    for (const upgrade of this.upgrades) {
+      upgrade.update();
+    }
     requestAnimationFrame(() => this.gameLoop());
   }
 
@@ -37,13 +47,27 @@ class Game {
         this.ball.onCollision(block);
         block.onCollision(this.ball);
         const blockElements = document.getElementsByTagName("block-element");
-        this.blocks = Array.from(blockElements).map((element) => element as unknown as Block);
+        this.blocks = Array.from(blockElements).map(
+          (element) => element as unknown as Block
+        );
         return;
       }
     }
     if (this.paddle.hasCollision(this.ball)) {
-      this.paddle.onCollision(this.ball);
       this.ball.onCollision(this.paddle);
+    }
+    for (const upgrade of this.upgrades) {
+      if (upgrade.hasCollision(this.paddle)) {
+        upgrade.onCollision(this.paddle);
+        this.paddle.onCollision(upgrade);
+        upgrade.onCollision(this.paddle);
+        const upgradeElements =
+          document.getElementsByTagName("upgrade-element");
+        this.upgrades = Array.from(upgradeElements).map(
+          (element) => element as unknown as Upgrade
+        );
+        return;
+      }
     }
   }
 
