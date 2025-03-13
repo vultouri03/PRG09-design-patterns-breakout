@@ -2,6 +2,7 @@ import { Paddle } from "./classes/paddle";
 import { Block } from "./classes/block";
 import { Red } from "./classes/behaviours/block/red";
 import { Yellow } from "./classes/behaviours/block/yellow";
+import { Ball } from "./classes/ball";
 
 /**
  * The game class is the main class of the game. It creates all the objects and
@@ -10,16 +11,19 @@ import { Yellow } from "./classes/behaviours/block/yellow";
 class Game {
   // Fields
   private paddle: Paddle;
+  private ball: Ball;
   private blocks: Block[] = [];
 
   constructor() {
     this.paddle = new Paddle();
+    this.ball = new Ball(this.paddle.x, this.paddle.y - 10);
     this.renderBlocks();
     this.gameLoop();
   }
 
   private gameLoop() {
     this.paddle.update();
+    this.ball.update();
     this.blocks.forEach((block) => block.update());
     requestAnimationFrame(() => this.gameLoop());
   }
